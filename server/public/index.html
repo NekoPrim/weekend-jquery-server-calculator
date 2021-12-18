@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="utf-8">
+        <title>Weekend jquery server calculator</title>
+
+        <!-- source in other files -->
+        <script src="scripts/jquery.js" charset="utf-8"></script>
+        <script src="scripts/client.js" charset="utf-8"></script>
+
+        <link rel="stylesheet" href="styles/style.css">
+
+    </head>
+
+    <body>
+        
+        <header>
+
+            <h1>Server Calculator</h1>
+
+        </header>
+
+        <!-- Calculator -->
+        <div class="form area">
+
+            <form id="calculatorForm">
+
+                <h2>Calculator</h2>
+
+                <input
+                    id="firstNumberInput"
+                    type="number"
+                    placeholder="number"
+                />
+
+                <button class="addition button">+</button>
+
+                <button class="minus button">-</button>
+
+                <button class="multiplication button">*</button>
+
+                <button class="division button">/</button>
+
+                <input
+                    id="secondNumberInput"
+                    type="number"
+                    placeholder="number"
+                />
+
+                <input
+                    type="submit"
+                    value="="
+                />
+
+                <button class="clear button">C</button>
+
+            </form>
+        
+        </div>
+
+        <!-- results -->
+        <div class="table area">
+
+            <table id="resultsTable">
+
+                <h2>Results</h2>
+
+                <thead>
+
+                    <th>Equation</th>
+                    <th>Answer</th>
+
+                </thead>
+
+                <tbody></tbody>
+
+            </table>
+
+        </div>
+
+    </body>
+
+</html>

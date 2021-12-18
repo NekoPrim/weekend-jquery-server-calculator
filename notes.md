@@ -28,7 +28,7 @@ technical tasks
         [X] styles folder
             [X] styles.css file
 [ ] html file
-    [ ] source js, jQuery, and css
+    [X] source js, jQuery, and css
     [ ] form
     <!-- table/form -->
         [ ] 2 input elements
