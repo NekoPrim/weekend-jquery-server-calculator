@@ -13,7 +13,7 @@ Terminal command: npm install body-parser
 <!-- Calculator check list -->
 
 technical tasks
-[X] prodject setup
+[X] project setup
     [X] server.js file
     [X] set up express
     [X] .gitignore file
