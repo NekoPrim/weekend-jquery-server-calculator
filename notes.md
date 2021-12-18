@@ -10,7 +10,7 @@ Create variable to call express and then a variable to run express	    ↑
 Terminal command: npm install nodemon (will have to do for each project)
 Terminal command: npm install body-parser
 
-<!-- check list -->
+<!-- Calculator check list -->
 
 technical tasks
 [ ] prodject setup
@@ -29,26 +29,44 @@ technical tasks
             [ ] styles.css file
 [ ] html file
     [ ] source js, jQuery, and css
-    <!-- [ ] form -->
-        <!-- [ ] input field for each player number guess -->
-        <!-- [ ] submit -->
-[ ] CSS file
-    [ ] add a little style
+    [ ] form
+    <!-- table/form -->
+        [ ] 2 input elements
+        [ ] + - * / buttons
+        [ ] clear button "c"
+        [ ] submit "="
+    [ ] table
+        [ ] header
+            [ ] equation
+            [ ] answer
+        [ ] row
+            [ ] equationHistory
+            [ ] mathAnswer
 [ ] server.js setup
+<!-- LOGIC MUST BE IN SERVER -->
     [ ] setup port 5000
     [ ] setup static files
-    <!-- [ ] generate random number function 1 to 25 -->
-    <!-- [ ] '/guess-history GET -->
-    <!-- [ ] '/guess POST -->
-    <!-- [ ] store the prevous guess's -->
-    <!-- [ ] send results for guess's -->
-        <!-- [ ] high, low, correct -->
-    <!-- [ ] reformate guessHistory as object -->
+    [ ] math equations function
+    [ ] '/equation-numbers GET
+        [ ] equationHistory.push
+    [ ] '/equation-answer POST
+        [ ] res.sendStatus(201);
+    [ ] store equationHistory
+    [ ] store mathAnswer
+    [ ] send results equation-answers
+        [ ] 
 [ ] client.js
     [ ] source jQuery
     [ ] set up functioning submit
-    [ ] set up AJAX
-    <!-- [ ] append guess's to DOM -->
-    <!-- [ ] append restart button if winner -->
-    <!-- [ ] total guess's counter -->
-    <!-- [ ] .empty() -->
+    [ ] set up AJAX GET request
+        [ ] method/url/data
+        [ ] .catch error
+        [ ] send 
+    [ ] set up AJAX POST response
+        [ ] method/url
+        [ ] .catch error
+    [ ] append equationHistory to DOM
+    [ ] append mathAnswer to DOM
+    [ ] 
+[ ] CSS file
+    [ ] add a little style
