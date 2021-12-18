@@ -13,20 +13,20 @@ Terminal command: npm install body-parser
 <!-- Calculator check list -->
 
 technical tasks
-[ ] prodject setup
-    [ ] server.js file
-    [ ] set up express
-    [ ] .gitignore file
-    [ ] modify .json file
-        [ ] nodemon
-    [ ] bodyParser
-    [ ] server folder
-        [ ] index.html file
-        [ ] scripts folder
-            [ ] client.js file
-            [ ] jquery.js file
-        [ ] styles folder
-            [ ] styles.css file
+[X] prodject setup
+    [X] server.js file
+    [X] set up express
+    [X] .gitignore file
+    [X] modify .json file
+        [X] nodemon
+    [X] bodyParser
+    [X] server folder
+        [X] index.html file
+        [X] scripts folder
+            [X] client.js file
+            [X] jquery.js file
+        [X] styles folder
+            [X] styles.css file
 [ ] html file
     [ ] source js, jQuery, and css
     [ ] form
