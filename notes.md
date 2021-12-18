@@ -27,21 +27,19 @@ technical tasks
             [X] jquery.js file
         [X] styles folder
             [X] styles.css file
-[ ] html file
+[X] html file
     [X] source js, jQuery, and css
-    [ ] form
+    [X] form
     <!-- table/form -->
-        [ ] 2 input elements
-        [ ] + - * / buttons
-        [ ] clear button "c"
-        [ ] submit "="
-    [ ] table
-        [ ] header
-            [ ] equation
-            [ ] answer
-        [ ] row
-            [ ] equationHistory
-            [ ] mathAnswer
+        [X] 2 input elements
+        [X] + - * / buttons
+        [X] clear button "c"
+        [X] submit "="
+    [X] table
+        [X] header
+            [X] equation
+            [X] answer
+        [X] body
 [ ] server.js setup
 <!-- LOGIC MUST BE IN SERVER -->
     [ ] setup port 5000
@@ -56,8 +54,9 @@ technical tasks
     [ ] send results equation-answers
         [ ] 
 [ ] client.js
-    [ ] source jQuery
+    [X] source jQuery
     [ ] set up functioning submit
+        [X] prevent page reload
     [ ] set up AJAX GET request
         [ ] method/url/data
         [ ] .catch error
@@ -67,6 +66,5 @@ technical tasks
         [ ] .catch error
     [ ] append equationHistory to DOM
     [ ] append mathAnswer to DOM
-    [ ] 
 [ ] CSS file
     [ ] add a little style
