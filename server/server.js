@@ -23,11 +23,34 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static('server/public'));
 
 app.listen(PORT, () => {
-    console.log ('Server is running on port', PORT)
+    console.log ('Server is running on port', PORT);
 });
 
 
-app.post('/equation-answer', (req, res) => {
-    console.log('in POST /equation-answer', req.body);
+let equationHistory = [];
+
+
+
+app.post ('/equation', (req, res) => {
+    console.log('in POST /equation', req.body);
     let answer = req.body;
+
+    let thisAnswer = new solve(answer.firstNumber, answer.calculation, answer.secondNumber);
+
+    // add new info to mathHistory array
+    equationHistory.unshift(thisAnswer);
 })
+
+
+function solve(firstNum, calc, secondNum) {
+this.firstNumber = firstNum;
+this.calculation = calc;
+this.secondNumber = secondNum;
+this.answerEquation = solveAnswer(firstNum, calc, secondNum);
+}
+
+function solveAnswer(numOne, action, numTwo) {
+    let finalAnswer = 
+        Number(firstNum) + calc + Number(secondNum);
+    console.log(finalAnswer);
+}
