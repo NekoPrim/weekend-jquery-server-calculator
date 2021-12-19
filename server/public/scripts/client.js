@@ -3,7 +3,21 @@ $(document).ready(onReady);
 
 function onReady() {
     console.log('Totally Math!');
+    $('input[type=button]').on('click', onCalc);
     $('#calculatorForm').on('submit', onEquals);
+}
+
+let button;
+
+function onCalc() {
+    console.log('in onCalc');
+    const buttons = document.querySelectorAll("input[type=button]");
+    const length = buttons.length;
+    for (let i = 0; i < length; i++) {
+        
+        }
+    }
+
 }
 
 function onEquals(event) {
@@ -13,16 +27,27 @@ function onEquals(event) {
 
     console.log('doing some math');
 
-    // grab input values
+
+    // make an object of the values
     let mathEquation = {
     firstNumber: $('#firstNumberInput').val(),
-    add: $('.addition').val(),
-    minus: $('.minus').val(),
-    times: $('.mulitplication').val(),
-    divide: $('.division').val(),
+    calculation: button,
     secondNumber: $('#secondNumberInput').val()
     };
+    // check to see if i got the values
+    console.log(mathEquation);
 
+    $.ajax({
+        method: 'POST',
+        url: '/equation-answer',
+        data: mathEquation
+    })
+        .then((response) => {
+            console.log('response:', response);
+        })
 
 
 }
+
+
+// grab the values of + - * /

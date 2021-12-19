@@ -16,6 +16,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const PORT = 5000;
 
+// must have this before GET and POST
 app.use(bodyParser.urlencoded({extended:true}));
 
 // Serve up static files (HTML, CSS, Client JS)
@@ -24,3 +25,9 @@ app.use(express.static('server/public'));
 app.listen(PORT, () => {
     console.log ('Server is running on port', PORT)
 });
+
+
+app.post('/equation-answer', (req, res) => {
+    console.log('in POST /equation-answer', req.body);
+    let answer = req.body;
+})

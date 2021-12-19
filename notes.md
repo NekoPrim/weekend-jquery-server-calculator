@@ -29,8 +29,6 @@ technical tasks
             [X] styles.css file
 [X] html file
     [X] source js, jQuery, and css
-    [X] form
-    <!-- table/form -->
         [X] 2 input elements
         [X] + - * / buttons
         [X] clear button "c"
@@ -42,8 +40,8 @@ technical tasks
         [X] body
 [ ] server.js setup
 <!-- LOGIC MUST BE IN SERVER -->
-    [ ] setup port 5000
-    [ ] setup static files
+    [X] setup port 5000
+    [X] setup static files
     [ ] math equations function
     [ ] '/equation-numbers GET
         [ ] equationHistory.push
