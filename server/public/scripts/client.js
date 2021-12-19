@@ -11,12 +11,10 @@ let button;
 
 function onCalc() {
     console.log('in onCalc');
-    const buttons = document.querySelectorAll("input[type=button]");
-    const length = buttons.length;
-    for (let i = 0; i < length; i++) {
-        
-        }
-    }
+
+    button = $(this).val();
+
+    
 
 }
 
