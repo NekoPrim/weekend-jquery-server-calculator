@@ -48,7 +48,7 @@ function onEquals(event) {
     // send info to the server
     $.ajax({
         method: 'POST',
-        url: '/equation-answer',
+        url: '/equation',
         data: mathEquation
     })
         .then((response) => {
@@ -62,18 +62,31 @@ function onEquals(event) {
 
     // clear number input areas with one class
     $('.numberInput').val('');
-
 }
 
 // get info back from the server
 function refresh() {
     console.log('in refresh');
+
+    let ajaxOptions = {
+        method: 'GET',
+        url: '/history'
+    };
+    $.ajax(ajaxOptions)
+        .then((response) => {
+            console.log('AJAX request complete!', response);
+            render
+        })
 }
 
 
 
 function onReset() {
     console.log('in onReset');
+
+    // clear input
+    $('#firstNumberInput').val('')
+    $('#secondNumberInput').val('')
 }
 
 

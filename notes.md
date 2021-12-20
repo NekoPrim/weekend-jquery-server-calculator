@@ -42,26 +42,26 @@ technical tasks
 <!-- LOGIC MUST BE IN SERVER -->
     [X] setup port 5000
     [X] setup static files
-    [ ] math equations function
-    [ ] '/equation-numbers GET
-        [ ] equationHistory.push
-    [ ] '/equation-answer POST
-        [ ] res.sendStatus(201);
-    [ ] store equationHistory
-    [ ] store mathAnswer
+    [X] math equations function
+    [X] '/equation-numbers GET
+    [X] equationHistory.push
+    [X] '/equation-answer POST
+        [X] res.sendStatus(201);
+    [X] store equationHistory
+    [X] store mathAnswer
     [ ] send results equation-answers
-        [ ] 
 [ ] client.js
     [X] source jQuery
-    [ ] set up functioning submit
+    [X] set up functioning submit
         [X] prevent page reload
     [ ] set up AJAX GET request
-        [ ] method/url/data
-        [ ] .catch error
-        [ ] send 
-    [ ] set up AJAX POST response
         [ ] method/url
         [ ] .catch error
+        [ ] send 
+    [X] set up AJAX POST response
+        [X] method/url/data
+        [X] .catch error
+        [ ] send
     [ ] append equationHistory to DOM
     [ ] append mathAnswer to DOM
 [ ] CSS file

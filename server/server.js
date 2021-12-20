@@ -27,7 +27,8 @@ app.listen(PORT, () => {
 });
 
 
-let equationHistory = [];
+
+let history = [];
 
 
 
@@ -35,22 +36,31 @@ app.post ('/equation', (req, res) => {
     console.log('in POST /equation', req.body);
     let answer = req.body;
 
-    let thisAnswer = new solve(answer.firstNumber, answer.calculation, answer.secondNumber);
+    solveAnswer(answer.firstNumber, answer.calculation, answer.secondNumber);
 
-    // add new info to mathHistory array
-    equationHistory.unshift(thisAnswer);
+    res.sendStatus(201);
 })
 
 
-function solve(firstNum, calc, secondNum) {
-this.firstNumber = firstNum;
-this.calculation = calc;
-this.secondNumber = secondNum;
-this.answerEquation = solveAnswer(firstNum, calc, secondNum);
+
+function solveAnswer(firstNum, calc, secondNum) {
+    let finalEquation = `${firstNum} ${calc} ${secondNum}`;
+
+    // push to equationHistory
+    equationHistory.unshift(finalEquation);
+    console.log(equationHistory);
+
+    let finalAnswer = eval(finalEquation).toFixed(2);
+
+    // push to answerHistory
+    history.unshift({
+        equation: finalEquation,
+        answer: finalAnswer
+    });
+    console.log(answerHistory);
 }
 
-function solveAnswer(numOne, action, numTwo) {
-    let finalAnswer = 
-        Number(firstNum) + calc + Number(secondNum);
-    console.log(finalAnswer);
-}
+app.get('/history', (req, res) => {
+    console.log('in GET /history');
+
+})
