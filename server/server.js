@@ -27,8 +27,9 @@ app.listen(PORT, () => {
 });
 
 
+let equationHistory = [];
 
-let history = [];
+let answerHistory = [];
 
 
 
@@ -53,14 +54,16 @@ function solveAnswer(firstNum, calc, secondNum) {
     let finalAnswer = eval(finalEquation).toFixed(2);
 
     // push to answerHistory
-    history.unshift({
-        equation: finalEquation,
-        answer: finalAnswer
-    });
+    answerHistory.unshift(finalAnswer);
     console.log(answerHistory);
 }
 
 app.get('/history', (req, res) => {
     console.log('in GET /history');
-
+    
+    let objectToSend = {
+        equation: equationHistory,
+        answer: answerHistory
+    }
+    res.send(objectToSend);
 })

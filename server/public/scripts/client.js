@@ -75,8 +75,23 @@ function refresh() {
     $.ajax(ajaxOptions)
         .then((response) => {
             console.log('AJAX request complete!', response);
-            render
+            // retrieve history from server
+            render(response.history);
         })
+}
+
+
+// append history to DOM
+function render() {
+    console.log('in render');
+
+    // empty rows
+    $('#resultsTable tbody').empty();
+
+    // loop through history to append
+    
+
+    
 }
 
 
