@@ -57,7 +57,7 @@ function onEquals(event) {
         })
         .catch((err) => {
             console.log('POST failed!');
-            alert('something bad happened, try again later');
+            alert('Unable to send equation. Try again later!');
         }) // catch any errors
 
     // clear number input areas with one class
@@ -75,24 +75,34 @@ function refresh() {
     $.ajax(ajaxOptions)
         .then((response) => {
             console.log('AJAX request complete!', response);
-            // retrieve history from server
-            render(response.history);
+
+            // empty table body
+            $('#resultsTable tbody').empty();
+
+            // loop through response
+            for (let i = 0; i <response.length; i ++) {
+                let result = response[i];
+                $('#resultsTable tbody').append(`
+                    <tr>
+                        <td>
+                            ${result.equation}
+                        </td>
+
+                        <td>
+                            ${result.answer}
+                        </tr>
+                    </tr>
+                `)
+            }
+        })
+        .catch((err) => {
+            console.log('GET request failed', err);
+            alert('Unable to get answer. Try again later!');
         })
 }
 
 
-// append history to DOM
-function render() {
-    console.log('in render');
 
-    // empty rows
-    $('#resultsTable tbody').empty();
-
-    // loop through history to append
-    
-
-    
-}
 
 
 
