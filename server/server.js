@@ -14,7 +14,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const PORT = 5000;
+
+// set port to what port heroku is using
+// if there is no other port, use 5000
+const PORT = process.env.PORT || 5000;
 
 // must have this before GET and POST
 app.use(bodyParser.urlencoded({extended:true}));
@@ -92,3 +95,5 @@ app.get('/math', (req, res) => {
 
     res.send(answer);
 })
+
+console.log('my favorite food is', process.env.MY_FAVORITE_FOOD);
