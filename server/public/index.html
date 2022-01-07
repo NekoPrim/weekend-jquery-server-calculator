@@ -10,6 +10,7 @@
         <!-- source in other files -->
         <script src="scripts/jquery.js" charset="utf-8"></script>
         <script src="scripts/client.js" charset="utf-8"></script>
+        <script src="sweetalert2.all.min.js"></script>
 
         <link rel="stylesheet" href="styles/style.css">
 
@@ -32,60 +33,26 @@
 
                 <input
                     id="firstNumberInput"
-                    class="numberInput"
                     type="number"
                     placeholder="number"
                     required
                 />
 
-                <input 
-                    id="addition"
-                    class="button"
-                    type="button"
-                    value="+"
-                />
-
-                <input 
-                    id="minus"
-                    class="button"
-                    type="button"
-                    value="-"
-                />
-
-                <input 
-                    id="multiplication"
-                    class="button"
-                    type="button"
-                    value="*"
-                />
-
-                <input 
-                    id="division"
-                    class="button"
-                    type="button"
-                    value="/"
-                />
+                <select name = "operators" id = "operators">
+                    <option value = "+"> + </option>
+                    <option value = "-"> - </option>
+                    <option value = "*"> * </option>
+                    <option value = "/"> / </option>
 
                 <input
                     id="secondNumberInput"
-                    class="numberInput"
                     type="number"
                     placeholder="number"
                     required
                 />
 
-                <input
-                    id="equal"
-                    type="submit"
-                    value="="
-                />
-
-                <input
-                    id="clear"
-                    class="button"
-                    type="reset"
-                    value="C"
-                />
+                <button class = "equal"> = </button>
+                <button class = "clear"> C </button>
 
             </form>
         
@@ -100,7 +67,6 @@
 
                 <thead>
 
-                    <th>Equation</th>
                     <th>Answer</th>
 
                 </thead>

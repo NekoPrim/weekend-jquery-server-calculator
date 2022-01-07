@@ -27,43 +27,68 @@ app.listen(PORT, () => {
 });
 
 
-let equationHistory = [];
+let equation = [];
 
-let answerHistory = [];
+let answer = [];
 
 
 
-app.post ('/equation', (req, res) => {
-    console.log('in POST /equation', req.body);
-    let answer = req.body;
 
-    solveAnswer(answer.firstNumber, answer.calculation, answer.secondNumber);
+// receive values from client side
+app.post ('/math', (req, res) => {
+    console.log('in POST /math', req.body);
+
+    // store values from client side
+    let math = `${req.body.firstNum} ${req.body.operator} ${req.body.secondNum} =`;
+    equation.unshift(math);
+    console.log('equation', equation);
+
+    solve(req.body.firstNum, req.body.operator, req.body.secondNum)
 
     res.sendStatus(201);
+
 })
 
 
+// function to change string into number equation
+function solve(firstNum, operator, secondNum) {
+    let total = 0;
 
-function solveAnswer(firstNum, calc, secondNum) {
-    let finalEquation = `${firstNum} ${calc} ${secondNum}`;
+    // change string values to number
+    let first = Number(firstNum);
+    let second = Number(secondNum);
+    
+    // make conditional for creating equation
+    if(`${operator}` === '+'){
+        total = (first + second);
+        console.log(total);
+    }
+    else if(`${operator}` === '-'){
+        total = (first - second);
+        console.log(total);
+        
+    }
+    else if(`${operator}` === '*'){
+        total = (first * second);
+        console.log(total);
+        
+    }
+    else if(`${operator}` === '/'){
+        total = (first / second);
+        console.log(total);
+    }
 
-    // push to equationHistory
-    equationHistory.unshift(finalEquation);
-    console.log(equationHistory);
+    // capture values and put into answers
+    answer.unshift(`${equation} ${total}`);
+    console.log('answer', answer);
 
-    let finalAnswer = eval(finalEquation).toFixed(2);
-
-    // push to answerHistory
-    answerHistory.unshift(finalAnswer);
-    console.log(answerHistory);
+    // clear equation
+    equation = [];
 }
 
-app.get('/history', (req, res) => {
-    console.log('in GET /history');
-    
-    let objectToSend = {
-        equation: equationHistory,
-        answer: answerHistory
-    }
-    res.send(objectToSend);
+
+app.get('/math', (req, res) => {
+    console.log('in GET /math');
+
+    res.send(answer);
 })
